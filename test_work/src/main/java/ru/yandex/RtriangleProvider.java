@@ -12,24 +12,24 @@ public final class RtriangleProvider  {
     public static Rtriangle getRtriangle() {
         return new Rtriangle() {
 
-            public int getApexX1() { return (new Random().nextInt(20) + 1); }
+            public int getApexX1() { return -3; }
 
-            public int getApexY1() { return (new Random().nextInt(20) + 1); }
+            public int getApexY1() { return -2; }
 
             public int getApexX2() {
-                return (new Random().nextInt(20) + 1);
+                return 1;
             }
 
             public int getApexY2() {
-                return (new Random().nextInt(20) + 1);
+                return -1;
             }
 
             public int getApexX3() {
-                return (new Random().nextInt(20) + 1);
+                return -2;
             }
 
             public int getApexY3() {
-                return (new Random().nextInt(20) + 1);
+                return 5;
             }
 
         };

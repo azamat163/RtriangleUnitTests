@@ -21,7 +21,10 @@ public class RtriangleTest {
     private int b;
     private int c;
     private int max;
-
+    private int x21;
+    private int y21;
+    private int x23;
+    private int y23;
 
     @Severity(SeverityLevel.CRITICAL)
     @Title("Проверка с помощью теоремы Пифагора")
@@ -49,6 +52,23 @@ public class RtriangleTest {
                 int sumPowC = c;
                 assertEquals("The sum of the squares of the legs must be equal to the square of the hypotenuse",sumPowAB,sumPowC);
             }
+        }catch(AssertionFailedError e){
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Severity(SeverityLevel.CRITICAL)
+    @Title("Проверка с помощью скалярного произведения")
+    @Step("Проверка с помощью скалярного произведения")
+    @Test
+    public void check_inc_vectors() throws Throwable{
+        try{
+             x21 = rtriangle.getApexX2() - rtriangle.getApexX1();
+             y21 = rtriangle.getApexY2() - rtriangle.getApexY1();
+             x23 = rtriangle.getApexX2() - rtriangle.getApexX3();
+             y23 = rtriangle.getApexY2() - rtriangle.getApexY3();
+            assertEquals("Не является прямоугольным треугольником",x21*x23 + y21*y23,0);
         }catch(AssertionFailedError e){
             e.printStackTrace();
             throw e;
